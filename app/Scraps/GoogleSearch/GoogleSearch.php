@@ -23,7 +23,8 @@ class GoogleSearch
 
     public function crawl()
     {
-        $ch = curl_init("https://www.google.co.id/search?q=".urlencode($this->query)."&btnG=&newwindow=1&safe=active");
+        $ch = curl_init("https://www.google.co.id/search?q=".urlencode($this->query)."&btnG=&newwindow=1");
+//        $ch = curl_init("https://www.google.co.id/search?q=".urlencode($this->query)."&btnG=&newwindow=1&safe=active");
         curl_setopt_array($ch,
             [
                 CURLOPT_RETURNTRANSFER => true,

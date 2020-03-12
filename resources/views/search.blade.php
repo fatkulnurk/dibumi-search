@@ -4,6 +4,19 @@
 
 
 @section('content')
+    @if (!blank($answer['AbstractURL']))
+        <div class="box">
+            @if (!blank($answer['Image']))
+                <p class="has-text-centered">
+                    <img src="{{ $answer['Image'] }}" style="width: {{ $answer['ImageWidth']}}; height: {{ $answer['ImageHeight'] }}">
+                </p>
+            @endif
+            <strong>{{ $answer['Heading'] }}</strong>
+            <p>{{ $answer['AbstractText'] }}</p>
+            <p>Source: {{ $answer['AbstractURL'] }}</p>
+{{--            <p>{{ $answer['Abstract'] }}</p>--}}
+        </div>
+    @endif
     @foreach($results as $result)
         <a href="{{ $result['url'] }}" class="box">
             <strong>{{ $result['title'] }}</strong> <br>
@@ -13,9 +26,30 @@
             <p>{{ $result['text'] }}</p>
         </a>
     @endforeach
-    <div class="box has-text-centered">
-        <h1 class="title">Apa Itu {{ config('app.name') }}?</h1>
-        <p>{{ config('app.name') }} adalah sebuah mesin pencari yang tidak melakukan tracking kepada anda, kami bukan seperti mesin pencari lain yang melakukan itu.
-            Untuk saat ini baru bisa mencari website saja & baru bisa menampilkan 10 hasil teratas.</p>
-    </div>
+
+    @if (!blank($answer['RelatedTopics']))
+        <table class="table is-fullwidth">
+            <thead>
+            <tr>
+                <th>Related Search From DuckDuckGo</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            @foreach($answer['RelatedTopics'] as $item)
+                <tr>
+                    <td class="has-text-centered">
+                        <img src="{{ $item->Icon->URL }}" style="width: 86px">
+                    </td>
+                    <td>
+                        <a href="{{ route('search', ['q' => $item->Text]) }}">
+                            <p>{{ $item->Text }}</p>
+                        </a>
+                    </td>
+                </tr>
+            @endforeach
+
+            </tbody>
+        </table>
+    @endif
 @endsection
