@@ -13,7 +13,7 @@ class SearchController extends Controller
         $st = new GoogleSearch($keyword);
         $results = collect($st->result())->toArray();
 
-        return $results;
+//        return $results;
         return view('search', compact('results', 'keyword'));
     }
 }

@@ -68,7 +68,12 @@ class GoogleSearch
         $data = [];
         foreach($resultDOM as $key => $div) {
             $htmlSelector = $div->innerHtml;
-            $dataObj = [];
+            $dataObj = [
+                'title' => '',
+                'url' => '',
+                'breadcumb' => '',
+                'text' => '',
+            ];
 //            $dataObj = new \stdClass();
             if (!blank($htmlSelector)) {
                 $dom->loadStr($htmlSelector);
