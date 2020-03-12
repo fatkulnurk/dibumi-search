@@ -68,7 +68,8 @@ class GoogleSearch
         $data = [];
         foreach($resultDOM as $key => $div) {
             $htmlSelector = $div->innerHtml;
-            $dataObj = new \stdClass();
+            $dataObj = [];
+//            $dataObj = new \stdClass();
             if (!blank($htmlSelector)) {
                 $dom->loadStr($htmlSelector);
                 $a = $dom->find('a');
@@ -78,23 +79,23 @@ class GoogleSearch
                     $result = $dom->find('div');
                     foreach ($result as $keyDivAhref => $divAhref) {
                         if ($keyDivAhref == 0) {
-                            $dataObj->title = strip_tags($divAhref);
+                            $dataObj['title'] = strip_tags($divAhref);
                         } else if($keyDivAhref == 1) {
-                            $dataObj->breadcumb = strip_tags($divAhref);
+                            $dataObj['breadcumb'] = strip_tags($divAhref);
                         }
                     }
                 }
 
                 $url = Url::fromString($a->href);
-                $dataObj->url = $url->getQueryParameter('q');
+                $dataObj['url'] = $url->getQueryParameter('q');
 
                 $divBySelector = explode('<div class="BNeawe s3v9rd AP7Wnd">', $htmlSelector);
-                $dataObj->text = strip_tags(end($divBySelector));
+                $dataObj['text'] = strip_tags(end($divBySelector));
 
                 // hanya memasukan 10 data, dan ketika datanya ada 10 di hasil pencarian (faktanya datanya ada 13) maka cuma di ambil 10.
                 if ($key < 10) {
                     if ($key <= (count($resultDOM) - 2)) {
-                        if (!blank($dataObj->title) && !blank($dataObj->url) && !blank($dataObj->text)) {
+                        if (!blank($dataObj['title']) && !blank($dataObj['url']) && !blank($dataObj['text'])) {
                             $data[] = $dataObj;
                         }
                     }
