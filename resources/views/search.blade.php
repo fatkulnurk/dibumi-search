@@ -5,7 +5,7 @@
 
 @section('content')
     @foreach($results as $result)
-        <a href="{{ $result['url'] }}" class="box has-text-centered">
+        <a href="{{ $result['url'] }}" class="box">
             <strong>{{ $result['title'] }}</strong> <br>
             @if (isset($result['breadcumb']))
                 {{ $result['breadcumb'] }}

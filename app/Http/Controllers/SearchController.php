@@ -13,7 +13,10 @@ class SearchController extends Controller
         $st = new GoogleSearch($keyword);
         $results = collect($st->result())->toArray();
 
-//        return $results;
+        if ($request->query('type', '') == 'json') {
+            return $results;
+        }
+
         return view('search', compact('results', 'keyword'));
     }
 }
