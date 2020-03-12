@@ -31,21 +31,28 @@
         <table class="table is-fullwidth">
             <thead>
             <tr>
-                <th>Related Search From DuckDuckGo</th>
+                <th colspan="2">Related Search From DuckDuckGo</th>
             </tr>
             </thead>
             <tbody>
 
             @foreach($answer['RelatedTopics'] as $item)
                 <tr>
-                    <td class="has-text-centered">
-                        <img src="{{ $item->Icon->URL }}" style="width: 86px">
-                    </td>
-                    <td>
-                        <a href="{{ route('search', ['q' => $item->Text]) }}">
-                            <p>{{ $item->Text }}</p>
-                        </a>
-                    </td>
+
+                    @if (blank($item->Icon->URL))
+                        <td colspan="2">
+                    @else
+                        <td>
+                            @endif
+                            <a href="{{ route('search', ['q' => $item->Text]) }}">
+                                <p>{{ $item->Text }}</p>
+                            </a>
+                        </td>
+                    @if (!blank($item->Icon->URL))
+                        <td class="has-text-centered">
+                            <img src="{{ $item->Icon->URL }}" style="width: 86px" alt=""/>
+                        </td>
+                    @endif
                 </tr>
             @endforeach
 

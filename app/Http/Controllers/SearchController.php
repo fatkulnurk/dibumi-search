@@ -14,7 +14,7 @@ class SearchController extends Controller
         $st = new GoogleSearch($keyword);
         $results = collect($st->result())->toArray();
 
-        $results = [];
+//        $results = [];
         $duckduckgo = new DuckDuckGo($keyword);
         $answer = collect($duckduckgo->result())->toArray();
 
