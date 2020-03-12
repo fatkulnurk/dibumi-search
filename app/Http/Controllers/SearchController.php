@@ -11,8 +11,9 @@ class SearchController extends Controller
     {
         $keyword = $request->query('q');
         $st = new GoogleSearch($keyword);
-        $results = $st->result();
+        $results = collect($st->result())->toArray();
 
+        return $results;
         return view('search', compact('results', 'keyword'));
     }
 }

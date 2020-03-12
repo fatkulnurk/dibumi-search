@@ -5,10 +5,10 @@
 
 @section('content')
     @foreach($results as $result)
-        <a href="{{ $result->url }}" class="box has-text-centered">
-            <strong>{{ $result->title }}</strong> <br>
-            {{ $result->breadcumb }}
-            <p>{{ $result->text }}</p>
+        <a href="{{ $result['url'] }}" class="box has-text-centered">
+            <strong>{{ $result['title'] }}</strong> <br>
+            {{ $result['breadcumb'] }}
+            <p>{{ $result['text'] }}</p>
         </a>
     @endforeach
     <div class="box has-text-centered">
