@@ -94,7 +94,9 @@ class GoogleSearch
                 // hanya memasukan 10 data, dan ketika datanya ada 10 di hasil pencarian (faktanya datanya ada 13) maka cuma di ambil 10.
                 if ($key < 10) {
                     if ($key <= (count($resultDOM) - 2)) {
-                        $data[] = $dataObj;
+                        if (!blank($dataObj->title) && !blank($dataObj->url) && !blank($dataObj->text)) {
+                            $data[] = $dataObj;
+                        }
                     }
                 }
             }

@@ -7,7 +7,9 @@
     @foreach($results as $result)
         <a href="{{ $result['url'] }}" class="box has-text-centered">
             <strong>{{ $result['title'] }}</strong> <br>
-            {{ $result['breadcumb'] }}
+            @if (isset($result['breadcumb']))
+                {{ $result['breadcumb'] }}
+            @endif
             <p>{{ $result['text'] }}</p>
         </a>
     @endforeach
