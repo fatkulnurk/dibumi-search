@@ -31,15 +31,14 @@
         <table class="table is-fullwidth">
             <thead>
             <tr>
-                <th colspan="2">Related Search From DuckDuckGo</th>
+                <th colspan="2">Related Search</th>
             </tr>
             </thead>
             <tbody>
 
             @foreach($answer['RelatedTopics'] as $item)
                 <tr>
-
-                    @if (blank(optional($item->Icon)->URL))
+                    @if (blank(optional($item)->Icon->URL))
                         <td colspan="2">
                     @else
                         <td>
