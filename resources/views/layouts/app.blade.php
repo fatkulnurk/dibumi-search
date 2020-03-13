@@ -13,7 +13,7 @@
         <div class="column is-6 is-offset-3">
             <div class="box has-text-centered">
                 <div class="field">
-                    <h1 class="title">{{ config('app.name') }}</h1>
+                    <h1 class="title"><a href="/" title="{{ config('app.name') }}">{{ config('app.name') }}</a></h1>
                     <h2 class="subtitle">{{ config('app.description') }}</h2>
                 </div>
             </div>
