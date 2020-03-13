@@ -38,7 +38,7 @@
 
             @foreach($answer['RelatedTopics'] as $item)
                 <tr>
-                    @if (blank(optional($item)->Icon->URL))
+                    @if (blank(optional(optional($item)->Icon)->URL))
                         <td colspan="2">
                     @else
                         <td>
