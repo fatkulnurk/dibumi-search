@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="36422a2d-c027-4bdc-ab18-22f5c41c70f5" name="Default Changelist" comment="" />
+    <list default="true" id="36422a2d-c027-4bdc-ab18-22f5c41c70f5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Scraps/GoogleSearch/GoogleSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Scraps/GoogleSearch/GoogleSearch.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -159,6 +162,7 @@
       <updated>1583998726293</updated>
       <workItem from="1583998728079" duration="19806000" />
       <workItem from="1584030250286" duration="8021000" />
+      <workItem from="1584127863405" duration="511000" />
     </task>
     <servers />
   </component>
