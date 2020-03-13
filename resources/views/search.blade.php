@@ -23,7 +23,9 @@
             @if (isset($result['breadcumb']))
                 {{ $result['breadcumb'] }}
             @endif
-            <p>{{ $result['text'] }}</p>
+            @if (isset($result['text']))
+                <p>{{ $result['text'] }}</p>
+            @endif
         </a>
     @endforeach
 
