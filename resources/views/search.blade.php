@@ -39,6 +39,7 @@
             <tbody>
 
             @foreach($answer['RelatedTopics'] as $item)
+                @if (!blank($item->Text))
                 <tr>
                     @if (blank(optional(optional($item)->Icon)->URL))
                         <td colspan="2">
@@ -55,6 +56,7 @@
                         </td>
                     @endif
                 </tr>
+                @endif
             @endforeach
 
             </tbody>
