@@ -38,7 +38,7 @@
     </div>
 </div>
 
-<footer class="footer">
+<footer class="footer" style="margin-top: 10px">
     <div class="container has-text-centered">
         <p>
             &copy; 2020 - {{ config('app.name') }}
@@ -49,7 +49,7 @@
         </p>
         <hr>
         <p>
-            Informasi Sumber Data: Data yang tampil pada hasil penelusuran berasal dari robot crawling kami + mesin pencari.
+            Informasi Sumber Data: Data yang tampil pada hasil penelusuran berasal dari robot crawling kami + mesin pencari lain.
         </p>
     </div>
 </footer>
