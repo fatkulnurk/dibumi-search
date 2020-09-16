@@ -11,10 +11,14 @@ class SearchController extends Controller
     public function __invoke(Request $request)
     {
         $keyword = $request->query('q');
+
+        if (blank($keyword)) {
+            $keyword = 'indonesia';
+        }
+
         $st = new GoogleSearch($keyword);
         $results = collect($st->result())->toArray();
 
-//        $results = [];
         $duckduckgo = new DuckDuckGo($keyword);
         $answer = collect($duckduckgo->result())->toArray();
 

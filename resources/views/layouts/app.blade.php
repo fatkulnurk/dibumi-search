@@ -49,7 +49,7 @@
         </p>
         <hr>
         <p>
-            Informasi Sumber Data: Data yang tampil pada hasil penelusuran berasal dari robot crawling kami + mesin pencari lain.
+            Informasi Sumber Data: Data yang tampil pada hasil penelusuran berasal mesin pencari lain.
         </p>
     </div>
 </footer>
