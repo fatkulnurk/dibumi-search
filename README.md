@@ -1,6 +1,5 @@
 ## DIBUMI.COM
 
-mesim pencari
 todo
 - [x] Web
 - [ ] Gambar
